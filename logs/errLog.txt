@@ -1,0 +1,8 @@
+20220613	02:09:03	64887d6a-ad2b-4d0e-874f-17c54a03a684	Error: Not allowed by CORS
+20220613	03:49:47	af37fcd2-1a90-47f7-b9f7-e6eb5606eebe	Error: ENOENT: no such file or directory, stat 'C:\Users\Oz\Desktop\NODE\ExpressBasic\routes\views\index.html'
+20220613	03:49:50	324bbc78-cbaf-4ab8-b788-680ca1b28e7c	Error: ENOENT: no such file or directory, stat 'C:\Users\Oz\Desktop\NODE\ExpressBasic\routes\views\index.html'
+20220613	04:13:28	ed8f4c85-ea87-475f-bd9a-22d752eff4a7	TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+20220613	04:13:48	1dd00ebf-6cab-435b-b2be-97499452963e	TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+20220613	05:10:30	4a142264-8058-4e7d-b8c7-92e01dc4e355	Error: Not allowed by CORS
+20220613	05:23:08	8c6fab80-49bd-4e46-8f7c-09674b3f8dfa	SyntaxError: Unexpected string in JSON at position 20
+20220613	05:23:25	947272db-482d-4990-abec-bc84cb23ac0c	SyntaxError: Unexpected string in JSON at position 20
