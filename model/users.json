@@ -1,10 +1,28 @@
 [
   {
     "username": "test1",
-    "password": "$2b$10$pp20WzOKd3O/NADs4tE5WuziiXnzbY1Qml/8QczVvmbUuggC/xvGC"
+    "role": {
+      "User": 2001,
+      "Admin": 5150,
+      "Editor": 1984
+    },
+    "password": "$2b$10$3cwU8I6/6cHXVQrGBowTiu0cEx0F738KSeTkwnxTQHcGphUigjtCe"
   },
   {
     "username": "test2",
-    "password": "$2b$10$3cwU8I6/6cHXVQrGBowTiu0cEx0F738KSeTkwnxTQHcGphUigjtCe"
+    "role": {
+      "User": 2001,
+      "Editor": 1984
+    },
+    "password": "$2b$10$pp20WzOKd3O/NADs4tE5WuziiXnzbY1Qml/8QczVvmbUuggC/xvGC",
+    "refreshToken": ""
+  },
+  {
+    "username": "test3",
+    "role": {
+      "User": 2001
+    },
+    "password": "$2b$10$pp20WzOKd3O/NADs4tE5WuziiXnzbY1Qml/8QczVvmbUuggC/xvGC",
+    "refreshToken": ""
   }
 ]

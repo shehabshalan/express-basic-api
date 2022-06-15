@@ -1,6 +1,6 @@
 const cors = require("cors");
+const allowedOrigins = require("./allowedOrigins");
 
-const whiteList = ["http://localhost:3000", "https://www.googl.com"];
 const corsOptions = {
   origin: (origin, callback) => {
     // ** origin is a trick to allow undefined origin, remove on production

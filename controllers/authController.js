@@ -25,12 +25,12 @@ const handleLogin = async (req, res) => {
   try {
     /// create JWTs
     const accessToken = jwt.sign(
-      { username: foundUser },
+      { username: foundUser.username },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" }
     );
     const refreshToken = jwt.sign(
-      { username: foundUser },
+      { username: foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "1d" }
     );
@@ -43,7 +43,7 @@ const handleLogin = async (req, res) => {
     usersDB.setUsers([...otherUsers, currentUser]);
     await fsPromises.writeFile(
       path.join(__dirname, "..", "model", "users.json"),
-      JSON.stringify(usersDB)
+      JSON.stringify(usersDB.users)
     );
     /*
     /// httpOnly means it's not accessible by javascript.
@@ -51,6 +51,8 @@ const handleLogin = async (req, res) => {
     */
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
+      sameSite: "None",
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.status(200).json({ success: `User ${user} is logged in`, accessToken });
@@ -59,4 +61,4 @@ const handleLogin = async (req, res) => {
   }
 };
 
-module.exports = handleLogin;
+module.exports = { handleLogin };

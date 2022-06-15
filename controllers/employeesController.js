@@ -5,6 +5,7 @@ const data = {
   },
 };
 const getAllEmployees = (req, res) => {
+  console.log(req.user);
   res.json(data.employees);
 };
 const getEmployeeById = (req, res) => {
