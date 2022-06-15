@@ -5,7 +5,6 @@ const data = {
   },
 };
 const getAllEmployees = (req, res) => {
-  console.log(req.user);
   res.json(data.employees);
 };
 const getEmployeeById = (req, res) => {
@@ -53,7 +52,6 @@ const updateEmployee = (req, res) => {
 };
 const deleteEmployee = (req, res) => {
   const employee = data.employees.find((emp) => emp.id === req.body.id);
-  console.log(req.body.id);
   if (!employee) {
     return res
       .status(400)

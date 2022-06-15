@@ -24,10 +24,16 @@ const handleLogin = async (req, res) => {
   if (!isCorrect) return res.status(401).json({ message: "wrong password" }); //Unauthorized
   try {
     /// create JWTs
+    const roles = Object.values(foundUser.roles);
     const accessToken = jwt.sign(
-      { username: foundUser.username },
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles: roles,
+        },
+      },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "5m" }
     );
     const refreshToken = jwt.sign(
       { username: foundUser.username },

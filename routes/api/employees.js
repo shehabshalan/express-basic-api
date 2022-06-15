@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const {
   getAllEmployees,
   getEmployeeById,
@@ -7,13 +8,15 @@ const {
   updateEmployee,
   deleteEmployee,
 } = require("../../controllers/employeesController");
+const ROLES_LIST = require("../../config/roles_list");
+const verifyRoles = require("../../middleware/verifyRoles");
 
 router
   .route("/")
   .get(getAllEmployees)
-  .post(createEmployee)
-  .put(updateEmployee)
-  .delete(deleteEmployee);
+  .post(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), createEmployee)
+  .put(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), updateEmployee)
+  .delete(verifyRoles(ROLES_LIST.Admin), deleteEmployee);
 router.get("/:id", getEmployeeById);
 
 module.exports = router;
